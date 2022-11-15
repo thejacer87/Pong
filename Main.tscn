@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfi5jooltw33l"]
+
+[ext_resource type="PackedScene" uid="uid://ceppsuyllohhw" path="res://Paddle.tscn" id="1_8j0bh"]
+[ext_resource type="PackedScene" uid="uid://b3bvokopc0lay" path="res://Wall.tscn" id="2_ceck4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Paddle" parent="." instance=ExtResource("1_8j0bh")]
+position = Vector2(1216, 320)
+
+[node name="Paddle2" parent="." instance=ExtResource("1_8j0bh")]
+position = Vector2(64, 320)
+
+[node name="WallTop" parent="." instance=ExtResource("2_ceck4")]
+position = Vector2(750, -10)
+
+[node name="WallBottom" parent="." instance=ExtResource("2_ceck4")]
+position = Vector2(752, 730)
