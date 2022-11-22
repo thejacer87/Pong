@@ -1,18 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi1fn5mygw6wp"]
+[gd_scene load_steps=4 format=3 uid="uid://b4mgrn4k371np"]
 
-[sub_resource type="Texture2D" id="Texture2D_wy1ee"]
-resource_local_to_scene = false
-resource_name = ""
+[ext_resource type="Script" path="res://Ball.gd" id="1_hjfog"]
+[ext_resource type="Texture2D" uid="uid://gihtlhqwdv4d" path="res://icon.svg" id="1_taf05"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hyg5h"]
 
-[node name="Ball" type="Node2D"]
+[node name="Ball" type="CharacterBody2D"]
 position = Vector2(0, 1)
 scale = Vector2(1.19313, 1.19313)
+script = ExtResource("1_hjfog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 1, 1)
-texture = SubResource("Texture2D_wy1ee")
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -0.838135)
+scale = Vector2(0.419066, 0.506548)
+texture = ExtResource("1_taf05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hyg5h")
