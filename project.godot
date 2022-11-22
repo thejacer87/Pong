@@ -8,6 +8,22 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "CharacterBody2D",
+"class": &"Ball",
+"language": &"GDScript",
+"path": "res://Ball.gd"
+}, {
+"base": "CharacterBody2D",
+"class": &"Paddle",
+"language": &"GDScript",
+"path": "res://Paddle.gd"
+}]
+_global_script_class_icons={
+"Ball": "",
+"Paddle": ""
+}
+
 [application]
 
 config/name="Pong"
@@ -20,6 +36,11 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_1="paddles"
+2d_physics/layer_2="ball"
 
 [rendering]
 

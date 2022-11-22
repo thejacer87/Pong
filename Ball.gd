@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Ball
 @export var speed = 200
 
 var direction = Vector2.ZERO

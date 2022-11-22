@@ -8,6 +8,7 @@
 [node name="Ball" type="CharacterBody2D"]
 position = Vector2(0, 1)
 scale = Vector2(1.19313, 1.19313)
+collision_layer = 2
 script = ExtResource("1_hjfog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

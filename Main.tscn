@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfi5jooltw33l"]
+[gd_scene load_steps=5 format=3 uid="uid://bfi5jooltw33l"]
 
 [ext_resource type="PackedScene" uid="uid://ceppsuyllohhw" path="res://Paddle.tscn" id="1_8j0bh"]
 [ext_resource type="PackedScene" uid="uid://b3bvokopc0lay" path="res://Wall.tscn" id="2_ceck4"]
 [ext_resource type="PackedScene" uid="uid://b4mgrn4k371np" path="res://Ball.tscn" id="3_veg81"]
+[ext_resource type="PackedScene" uid="uid://tp8y8cy65yo6" path="res://ScoringZone.tscn" id="4_aaibv"]
 
 [node name="Main" type="Node2D"]
 
@@ -20,3 +21,11 @@ position = Vector2(752, 730)
 
 [node name="Ball" parent="." instance=ExtResource("3_veg81")]
 position = Vector2(640, 320)
+
+[node name="ScoringZone1" parent="." instance=ExtResource("4_aaibv")]
+position = Vector2(-25, 322)
+node_path = NodePath("../Paddle2")
+
+[node name="ScoringZone2" parent="." instance=ExtResource("4_aaibv")]
+position = Vector2(1305, 322)
+node_path = NodePath("../Paddle")
