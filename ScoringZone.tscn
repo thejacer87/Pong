@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://tp8y8cy65yo6"]
+
+[ext_resource type="Script" path="res://ScoringZone.gd" id="1_mvkif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmuao"]
+size = Vector2(50, 1080)
+
+[node name="ScoringZone" type="Area2D"]
+position = Vector2(0, 1)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mvkif")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kmuao")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
