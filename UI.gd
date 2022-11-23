@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_node("MarginContainer/Score").text = str(get_node(player_one).score)
-	get_node("MarginContainer2/Score").text = str(get_node(player_two).score)
+	$MarginContainer/Score.text = str(get_node(player_one).score)
+	$MarginContainer2/Score.text = str(get_node(player_two).score)
 	pass
 

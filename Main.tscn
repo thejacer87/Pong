@@ -1,18 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfi5jooltw33l"]
+[gd_scene load_steps=7 format=3 uid="uid://bfi5jooltw33l"]
 
 [ext_resource type="PackedScene" uid="uid://ceppsuyllohhw" path="res://Paddle.tscn" id="1_8j0bh"]
+[ext_resource type="Script" path="res://Main.gd" id="1_s0q0m"]
 [ext_resource type="PackedScene" uid="uid://b3bvokopc0lay" path="res://Wall.tscn" id="2_ceck4"]
 [ext_resource type="PackedScene" uid="uid://b4mgrn4k371np" path="res://Ball.tscn" id="3_veg81"]
 [ext_resource type="PackedScene" uid="uid://tp8y8cy65yo6" path="res://ScoringZone.tscn" id="4_aaibv"]
 [ext_resource type="PackedScene" uid="uid://0t7fdjjkiswj" path="res://UI.tscn" id="5_wcver"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_s0q0m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -192.0
+offset_top = -128.0
+offset_right = 1472.0
+offset_bottom = 832.0
+color = Color(0, 0, 0, 1)
+
+[node name="UI" parent="." instance=ExtResource("5_wcver")]
+player_one = NodePath("../Paddle")
+player_two = NodePath("../Paddle2")
 
 [node name="Paddle" parent="." instance=ExtResource("1_8j0bh")]
 position = Vector2(1216, 320)
 
 [node name="Paddle2" parent="." instance=ExtResource("1_8j0bh")]
-position = Vector2(64, 320)
+position = Vector2(48, 320)
 
 [node name="WallTop" parent="." instance=ExtResource("2_ceck4")]
 position = Vector2(750, -10)
@@ -25,14 +38,6 @@ position = Vector2(640, 320)
 
 [node name="ScoringZone1" parent="." instance=ExtResource("4_aaibv")]
 position = Vector2(-25, 322)
-node_path = NodePath("../Paddle2")
 
 [node name="ScoringZone2" parent="." instance=ExtResource("4_aaibv")]
 position = Vector2(1305, 322)
-node_path = NodePath("../Paddle")
-
-[node name="UI" parent="." instance=ExtResource("5_wcver")]
-grow_horizontal = 2
-grow_vertical = 2
-player_one = NodePath("../Paddle")
-player_two = NodePath("../Paddle2")
