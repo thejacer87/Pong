@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfi5jooltw33l"]
+[gd_scene load_steps=8 format=3 uid="uid://bfi5jooltw33l"]
 
 [ext_resource type="PackedScene" uid="uid://ceppsuyllohhw" path="res://Paddle.tscn" id="1_8j0bh"]
 [ext_resource type="Script" path="res://Main.gd" id="1_s0q0m"]
 [ext_resource type="PackedScene" uid="uid://b3bvokopc0lay" path="res://Wall.tscn" id="2_ceck4"]
+[ext_resource type="PackedScene" uid="uid://cftimngcotv2q" path="res://debug.tscn" id="2_ng6qu"]
 [ext_resource type="PackedScene" uid="uid://b4mgrn4k371np" path="res://Ball.tscn" id="3_veg81"]
 [ext_resource type="PackedScene" uid="uid://tp8y8cy65yo6" path="res://ScoringZone.tscn" id="4_aaibv"]
 [ext_resource type="PackedScene" uid="uid://0t7fdjjkiswj" path="res://UI.tscn" id="5_wcver"]
@@ -20,6 +21,11 @@ color = Color(0, 0, 0, 1)
 [node name="UI" parent="." instance=ExtResource("5_wcver")]
 player_one = NodePath("../Paddle")
 player_two = NodePath("../Paddle2")
+
+[node name="debug" parent="." instance=ExtResource("2_ng6qu")]
+grow_horizontal = 2
+grow_vertical = 2
+ball = NodePath("../Ball")
 
 [node name="Paddle" parent="." instance=ExtResource("1_8j0bh")]
 position = Vector2(1216, 320)
