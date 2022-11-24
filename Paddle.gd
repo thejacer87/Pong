@@ -10,9 +10,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	var rotate = Input.get_axis("paddle_rotate_up", "paddle_rotate_down")
+	rotation = deg_to_rad(15.0) * rotate
+	
 	var direction = Input.get_axis("paddle_up", "paddle_down")
 	velocity.y = direction * SPEED
 
