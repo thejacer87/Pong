@@ -23,8 +23,6 @@ player_one = NodePath("../Paddle")
 player_two = NodePath("../Paddle2")
 
 [node name="debug" parent="." instance=ExtResource("2_ng6qu")]
-grow_horizontal = 2
-grow_vertical = 2
 ball = NodePath("../Ball")
 
 [node name="Paddle" parent="." instance=ExtResource("1_8j0bh")]
