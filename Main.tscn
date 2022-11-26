@@ -27,6 +27,7 @@ ball = NodePath("../Ball")
 
 [node name="Paddle" parent="." instance=ExtResource("1_8j0bh")]
 position = Vector2(1216, 320)
+scale = Vector2(-1, -1)
 
 [node name="Paddle2" parent="." instance=ExtResource("1_8j0bh")]
 position = Vector2(48, 320)

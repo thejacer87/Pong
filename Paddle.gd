@@ -4,7 +4,7 @@ class_name Paddle
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @onready var score = 0
-
+@export var is_smacking = false;
 
 func _physics_process(delta):
 	var rotate = Input.get_axis("paddle_rotate_up", "paddle_rotate_down")
