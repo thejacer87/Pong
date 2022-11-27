@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://cac0imwvfudqj"]
+
+[ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_7c3jp"]
+[ext_resource type="Texture2D" uid="uid://dggaom4colwhy" path="res://assets/background/NGC_6087.jpg" id="3_od7as"]
+[ext_resource type="FontFile" uid="uid://dv6ugfdmiq64g" path="res://assets/PressStart2P-Regular.ttf" id="3_yx3d3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_7c3jp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -3.05176e-05
+offset_right = 1974.0
+offset_bottom = 1458.0
+scale = Vector2(0.680001, 0.680001)
+texture = ExtResource("3_od7as")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 88.0
+offset_right = 864.0
+offset_bottom = 191.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+offset_right = 400.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_yx3d3")
+theme_override_font_sizes/font_size = 100
+text = "PONG"
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -104.0
+offset_right = 6.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.84435, 1.86384)
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 34.0
+focus_neighbor_top = NodePath("../QuitButton")
+theme_override_fonts/font = ExtResource("3_yx3d3")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+offset_top = 38.0
+offset_right = 120.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("3_yx3d3")
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+offset_top = 66.0
+offset_right = 120.0
+offset_bottom = 90.0
+focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_fonts/font = ExtResource("3_yx3d3")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
