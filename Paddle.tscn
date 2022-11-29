@@ -120,7 +120,7 @@ _data = {
 script = ExtResource("1_0uv2g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(32.5, 128)
+scale = Vector2(32, 128)
 texture = ExtResource("2_ym24h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

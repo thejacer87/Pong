@@ -1,6 +1,6 @@
 extends RigidBody2D
 class_name Ball
-@export var speed = 200
+@export var speed = 400
 
 var direction = Vector2.ZERO
 var velocity = Vector2.ZERO
