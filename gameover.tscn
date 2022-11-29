@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://p5rcpw8xtwmr"]
+
+[ext_resource type="Script" path="res://gameover.gd" id="1_wn3wt"]
+[ext_resource type="Texture2D" uid="uid://dkbso8ph6t6hm" path="res://assets/pixel.png" id="2_ejhei"]
+[ext_resource type="FontFile" uid="uid://dv6ugfdmiq64g" path="res://assets/PressStart2P-Regular.ttf" id="2_icfgt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rl3s5"]
+font = ExtResource("2_icfgt")
+font_size = 26
+
+[node name="Gameover" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 408.0
+offset_top = 320.0
+offset_right = 408.0
+offset_bottom = 320.0
+script = ExtResource("1_wn3wt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.099986, 0.099986, 0.099986, 0.588235)
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = 8.0
+scale = Vector2(12.908, 3.70911)
+texture = ExtResource("2_ejhei")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 160.0
+offset_bottom = 61.0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+offset_right = 468.0
+offset_bottom = 58.0
+text = "Congrats, Player 1
+ You won!"
+label_settings = SubResource("LabelSettings_rl3s5")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+offset_top = 62.0
+offset_right = 468.0
+offset_bottom = 93.0
+alignment = 1
+
+[node name="Replay" type="Button" parent="VBoxContainer/HBoxContainer"]
+offset_left = 154.0
+offset_right = 214.0
+offset_bottom = 31.0
+text = "Replay"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer/HBoxContainer"]
+offset_left = 218.0
+offset_right = 314.0
+offset_bottom = 31.0
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
