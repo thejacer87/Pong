@@ -5,14 +5,16 @@
 [ext_resource type="FontFile" uid="uid://dv6ugfdmiq64g" path="res://assets/PressStart2P-Regular.ttf" id="3_yx3d3"]
 
 [node name="MainMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7c3jp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
 offset_left = -3.05176e-05
 offset_right = 1974.0
 offset_bottom = 1458.0
@@ -20,14 +22,12 @@ scale = Vector2(0.680001, 0.680001)
 texture = ExtResource("3_od7as")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 0
 offset_left = 464.0
 offset_top = 88.0
 offset_right = 864.0
 offset_bottom = 191.0
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
-layout_mode = 2
 offset_right = 400.0
 offset_bottom = 103.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -38,7 +38,6 @@ text = "PONG"
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -54,7 +53,6 @@ scale = Vector2(1.84435, 1.86384)
 alignment = 1
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 10.0
 offset_right = 120.0
 offset_bottom = 34.0
@@ -63,7 +61,6 @@ theme_override_fonts/font = ExtResource("3_yx3d3")
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 38.0
 offset_right = 120.0
 offset_bottom = 62.0
@@ -71,7 +68,6 @@ theme_override_fonts/font = ExtResource("3_yx3d3")
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 66.0
 offset_right = 120.0
 offset_bottom = 90.0
