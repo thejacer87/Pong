@@ -21,3 +21,6 @@ func _input(event):
 
 func add_points(points = 1):
 	score += points
+	
+func set_collision(value: bool):
+	$CollisionShape2D.set_deferred("disabled", value)

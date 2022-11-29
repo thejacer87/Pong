@@ -26,6 +26,7 @@ player_two = NodePath("../AI")
 
 [node name="debug" parent="." instance=ExtResource("2_ng6qu")]
 ball = NodePath("../Ball")
+paddle = NodePath("../Paddle")
 
 [node name="Paddle" parent="." instance=ExtResource("1_8j0bh")]
 position = Vector2(48, 320)
