@@ -6,6 +6,10 @@ extends Node2D
 @onready var zone_1 = $ScoringZone1
 @onready var zone_2 = $ScoringZone2
 @onready var pause = $Pause
+@onready var dangerWallTop = $DangerWallTop
+@onready var dangerWallBottom = $DangerWallBottom
+@onready var dangerWallLeft = $DangerWallLeft
+@onready var dangerWallRight = $DangerWallRight
 
 const winning_score = 2
 
@@ -35,6 +39,8 @@ func reset():
 	unpause_game()
 	zone_1.scored.connect(on_scored.bind(paddle_2))
 	zone_2.scored.connect(on_scored.bind(paddle_1))
+	ball.entered_danger_mode.connect(set_danger_mode.bind(true))
+	ball.exited_danger_mode.connect(set_danger_mode.bind(false))
 	paddle_1.score = 0
 	paddle_2.score = 0
 	pause.resume_game.connect(unpause_game)
@@ -50,3 +56,10 @@ func unpause_game():
 
 func go_to_main_menu():
 	get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
+
+func set_danger_mode(mode = false):
+	print("main::danger mode ", mode)
+	dangerWallTop.set_danger_mode(mode)
+	dangerWallBottom.set_danger_mode(mode)
+	dangerWallLeft.set_danger_mode(mode)
+	dangerWallRight.set_danger_mode(mode)

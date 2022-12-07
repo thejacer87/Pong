@@ -10,7 +10,7 @@ func _physics_process(delta):
 	rotation = deg_to_rad(15.0) * rotate
 
 	var direction = Input.get_axis("paddle_up", "paddle_down")
-	print("speed:", direction * SPEED)
+
 	velocity.y = direction * SPEED if direction else get_mouse_wheel_input()
 	move_and_slide()
 	pass

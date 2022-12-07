@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfi5jooltw33l"]
+[gd_scene load_steps=11 format=3 uid="uid://bfi5jooltw33l"]
 
 [ext_resource type="PackedScene" uid="uid://ceppsuyllohhw" path="res://Paddle.tscn" id="1_8j0bh"]
 [ext_resource type="Script" path="res://Main.gd" id="1_s0q0m"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://0t7fdjjkiswj" path="res://UI.tscn" id="5_wcver"]
 [ext_resource type="PackedScene" uid="uid://dcu7vk4rkix10" path="res://AI.tscn" id="8_wi2pc"]
 [ext_resource type="PackedScene" uid="uid://vh25a5e1avc1" path="res://pause.tscn" id="9_502vg"]
+[ext_resource type="PackedScene" uid="uid://c352g5yk80bt0" path="res://DangerWall.tscn" id="10_bshhr"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_s0q0m")
@@ -52,3 +53,17 @@ position = Vector2(1232, 320)
 visible = false
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DangerWallTop" parent="." instance=ExtResource("10_bshhr")]
+position = Vector2(640, 8)
+
+[node name="DangerWallLeft" parent="." instance=ExtResource("10_bshhr")]
+position = Vector2(8, 320)
+rotation = 1.5708
+
+[node name="DangerWallRight" parent="." instance=ExtResource("10_bshhr")]
+position = Vector2(1272, 320)
+rotation = 1.5708
+
+[node name="DangerWallBottom" parent="." instance=ExtResource("10_bshhr")]
+position = Vector2(640, 712)
