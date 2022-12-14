@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4mgrn4k371np"]
+[gd_scene load_steps=6 format=3 uid="uid://b4mgrn4k371np"]
 
 [ext_resource type="Script" path="res://Ball.gd" id="1_hjfog"]
 [ext_resource type="Texture2D" uid="uid://doc70u3obvf3" path="res://assets/ball.png" id="2_tel13"]
+[ext_resource type="AudioStream" uid="uid://b6vp6j0tcn2dd" path="res://assets/sounds/paddle_bounce.wav" id="3_wh3sb"]
+[ext_resource type="AudioStream" uid="uid://c3q3u1xamnrwl" path="res://assets/sounds/danger_mode_start.wav" id="4_tkwdb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hyg5h"]
 
@@ -18,5 +20,12 @@ shape = SubResource("CircleShape2D_hyg5h")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wh3sb")
+volume_db = -0.045
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tkwdb")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

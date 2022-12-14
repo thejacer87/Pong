@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfi5jooltw33l"]
+[gd_scene load_steps=12 format=3 uid="uid://bfi5jooltw33l"]
 
 [ext_resource type="PackedScene" uid="uid://ceppsuyllohhw" path="res://Paddle.tscn" id="1_8j0bh"]
 [ext_resource type="Script" path="res://Main.gd" id="1_s0q0m"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dcu7vk4rkix10" path="res://AI.tscn" id="8_wi2pc"]
 [ext_resource type="PackedScene" uid="uid://vh25a5e1avc1" path="res://pause.tscn" id="9_502vg"]
 [ext_resource type="PackedScene" uid="uid://c352g5yk80bt0" path="res://DangerWall.tscn" id="10_bshhr"]
+[ext_resource type="AudioStream" uid="uid://d3nbkc4lf6vd5" path="res://assets/sounds/background_music.mp3" id="11_nnvld"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_s0q0m")
@@ -67,3 +68,7 @@ rotation = 1.5708
 
 [node name="DangerWallBottom" parent="." instance=ExtResource("10_bshhr")]
 position = Vector2(640, 712)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_nnvld")
+autoplay = true
