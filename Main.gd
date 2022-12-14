@@ -11,7 +11,7 @@ extends Node2D
 @onready var dangerWallLeft = $DangerWallLeft
 @onready var dangerWallRight = $DangerWallRight
 
-const winning_score = 2
+const winning_score = 10
 
 func _ready():
 	reset()
@@ -58,7 +58,6 @@ func go_to_main_menu():
 	get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
 
 func set_danger_mode(mode = false):
-	print("main::danger mode ", mode)
 	dangerWallTop.set_danger_mode(mode)
 	dangerWallBottom.set_danger_mode(mode)
 	dangerWallLeft.set_danger_mode(mode)
