@@ -10,8 +10,8 @@ func _physics_process(delta):
 	rotation = deg_to_rad(15.0) * rotate
 
 	var direction = Input.get_axis("paddle_up", "paddle_down")
-	velocity.y = direction * SPEED
 
+	velocity.y = direction * SPEED if direction else get_mouse_wheel_input()
 	move_and_slide()
 	pass
 
@@ -21,3 +21,13 @@ func _input(event):
 
 func add_points(points = 1):
 	score += points
+	if score < 0:
+		score = 0
+
+func get_mouse_wheel_input():
+	if Input.is_action_just_released("wheel_down"):
+		return -300
+	if Input.is_action_just_released("wheel_up"):
+		return 300
+		
+	return 0

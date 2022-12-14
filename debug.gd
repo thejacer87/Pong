@@ -10,4 +10,5 @@ func _ready():
 func _process(delta):
 	$MarginContainer/SpeedLabel.text = 'Ball Speed: ' + str(get_node(ball).speed)
 	$MarginContainer2/BounceLabel.text = 'Bounce Count: ' + str(get_node(ball).bounce_counter)
+	$MarginContainer3/DangerBallLabel.text = 'Danger Time Left: ' + str(get_node(ball).timer.time_left)
 	pass

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c352g5yk80bt0"]
+
+[ext_resource type="Script" path="res://DangerWall.gd" id="1_0h4ey"]
+[ext_resource type="Texture2D" uid="uid://dkbso8ph6t6hm" path="res://assets/pixel.png" id="1_8xnlo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dsgo"]
+size = Vector2(1500, 20)
+
+[node name="DangerWall" type="StaticBody2D"]
+visible = false
+script = ExtResource("1_0h4ey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3dsgo")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(1500, 20)
+texture = ExtResource("1_8xnlo")
